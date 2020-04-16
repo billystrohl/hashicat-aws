@@ -124,6 +124,8 @@ resource aws_instance "hashicat" {
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    Billable = "true"
+    Department = "devops"
   }
 }
 
@@ -139,6 +141,7 @@ resource aws_instance "hashicat" {
 # Set up some environment variables for our script.
 # Add execute permissions to our scripts.
 # Run the deploy_app.sh script.
+
 resource "null_resource" "configure-cat-app" {
   depends_on = [aws_eip_association.hashicat]
 
