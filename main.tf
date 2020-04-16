@@ -142,7 +142,6 @@ resource aws_instance "hashicat" {
 # Add execute permissions to our scripts.
 # Run the deploy_app.sh script.
 
-#hi
 resource "null_resource" "configure-cat-app" {
   depends_on = [aws_eip_association.hashicat]
 
